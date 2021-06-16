@@ -33,7 +33,7 @@ body {
   flex-wrap: nowrap;
 }
   .navbar,.back {
-background-color: rgb(243,233,241);
+    background-color: rgb(243,233,241);
 
   }
   
@@ -59,6 +59,51 @@ background-color: rgb(243,233,241);
       max-width: 700px;
     }
   }
+  /**section produits de la page index.html**/
+  .container-title{
+   margin-top: 0.5rem;
+  }
+  #section-produits{
+    display:grid;  
+  }
+  @media  screen and (min-width: 768px) {
+    #section-produits{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .card{
+    margin: 1.2rem;
+    background-color: rgb(243,233,241);
+    border: 3px solid rgb(243,233,241);
+    box-shadow: 0px 0px 2px black;
+    transition: transform 0.3s ease-in-out;
+  }
+  .card:hover{
+    transform: translatey(10px);
+    background-color: white;
+  }
+  .card-img-top{
+    max-width: 100%;
+    object-fit: cover;
+    border: 3px solid rgb(243,233,241);
+  }
+  
+  .card-title{
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .card-price{
+    margin-right: 0.5rem;
+  }
+.star-blue{
+    color: #0065fc;
+}
+.btn-primary{
+  margin-top: 0.2rem;
+}
+.btn-primary:hover{
+  background-color: red;
+}
   /**Main page confirmation et remerciment**/
 .body-confirmation{
   border: 0.3rem solid rgba(0, 0, 0, 0.2)
