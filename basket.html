@@ -54,9 +54,6 @@
                     <li class="nav-item active">
                       <a href="index.html" class="nav-link">Accueil</a>
                     </li>
-                    <li class="nav-item ">
-                      <a href="products.html" class="nav-link">Produits</a>
-                    </li>
                     <li class="nav-item">
                       <a href="basket.html" class="nav-link"><i class="fas fa-shopping-cart fas-panier"></i>Panier</a>
                     </li>
@@ -67,14 +64,49 @@
           </div>
         </header>
      <section class="container">
-      <h1>Votre panier</h1>
+      <h1> Récapitulatif de votre panier</h1>
       <p>Retrait gratuit en point relais et <strong>livraison offerte</strong> sans minimum d'achat</p>
-        </section>
-        <main>
+        <main id="container-products-basket">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+            <th>Produit</th>
+            <th>Nom</th>
+            <th>Quantité</th>
+            <th>Prix</th>
+            <th>Annuler</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+         <tbody id="productsBasket">
+           <tr>
+            <td></td>   
+            <td></td>
+            <td>
+            </select>
+            <from>
+              <label for ="quantité"></label>
+              <select id="quantity" class="form-select mb-3" aria-label="Quantité">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                   <option value="4">4</option>
+                   <option value="5">5</option>
+               </select>
+            </from>
+            </td>
+            <td>€</td>
+            <td><button id="btn-supprimer"></button></td>
+            <td id="total">€</td>
+           </tr>
+         </tbody> 
+        </table>
+           
           <!-- à completer par le js-->
         </main>
+      </section> 
         <section class="container">
-          <h2>Identification</h2>
+          <h2>Merci de remplir le formulaire</h2>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">Prénom</label>
@@ -91,10 +123,6 @@
               <div class="form-group col-md-6">
                 <label for="inputAddress">Adresse</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="10 avenue de paris" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputCodePostal">Code Postal</label>
-                <input type="number" class="form-control" id="inputCodePostal" placeholder="75000" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputCity">Ville</label>
@@ -167,5 +195,6 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   ></script>
+  <script type="text/javascript" src="./js/basket.js"></script>
   </body>
   </html>

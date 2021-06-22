@@ -27,12 +27,20 @@ console.log(id);
         <span class="star-blue"><i class="fas fa-star"></i></span>
         <span class="star-blue"><i class="fas fa-star"></i></span>
      </div>
-    <form>
-     <select id ="choix-colors">
-     <option>Couleur</option>
-   </select></br></br>
+    <form> 
+    <label for="choix-colors">Choisir la couleur : </label>
+      <select name="choix-colors" id="choix-colors" class="choix">
+    </select></br>
+    <label for ="quantity">Quantité :</label>
+       <select id="quantity" class="form-select mb-3" aria-label="Quantité">
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
    </form>
-     <a href="./basket.html" class="btn btn-primary">ajouter au panier</a>
+     <a href="./basket.html"><button id="ajout" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">ajouter au panier</button></a>
     </div> 
     </div>`  
     for (let colors of teddy.colors){
@@ -41,6 +49,7 @@ console.log(id);
     } /*** Boucle pour récuperer les couleurs ***/  
 
 }; 
+ 
 /*** ***/
 /*** Appel Api pour récupèrer les données par le id ***/
 const getTeddy = async function() {
@@ -55,3 +64,35 @@ const getTeddy = async function() {
    }
    /*** appel de la fonction ***/
   getTeddy();
+
+  
+  /*** selection du bouton ***/
+  let ajout = document.querySelector("button");
+console.log(ajout)
+
+  
+     /*** Le localStorage ***/
+/*** Déclarer la variariable contenant les clés et valeurs pour récupérer l'objet dans le localstorage***/
+let teddyLocalStorage = JSON.parse(localStorage.getItem("produitsLocalStorage")); /*** JSON.parse convertit les données au format JSON en Objet javascript ***/
+/** s'il y a des produits dans le localstorage ***/
+if (localStorage.getItem("produitsLocalStorage")){
+  teddyLocalStorage= [];
+}
+/*** s'il n'ya pas de produits dans le localstorage ***/
+else {
+  let basketInit =[];
+  localStorage.setItem("produitsLocalStorage", JSON.stringify(basketInit));   /***JSON.stringify convertit les données au format objet javascript en JSON ***/
+  }
+
+/*** LE PANIER ***/
+/**ecouter le bouton et envoyer du(des) produit (s)au panier */
+ajout.addEventListener("click", function (event){
+  event.preventDefault();  
+  const ajoutBasket =  getTeddy();
+  teddyLocalStorage.push(ajoutBasket);
+  localStorage.setItem("produitsLocalStorage", JSON.stringify(teddyLocalStorage)); /*** transformation en format JSON  et l'envoyer dans la key produitsLocalStorage du localstorage ***/
+  alert(" le produit a été ajouté au panier")
+  location.reload();
+}); 
+
+

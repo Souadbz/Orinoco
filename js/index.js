@@ -29,7 +29,8 @@ const affichageTeddies = document.getElementById("section-produits");
             <span class="star-blue"><i class="fas fa-star"></i></span>
             <span class="star-blue"><i class="fas fa-star"></i></span>
          </div>
-         <a href="./products.html?id=${teddy._id}" class="btn btn-primary"> En savoir plus</a>
+         <a href="./products.html?id=${teddy._id}" class="btn btn-primary" aria-label="Bouton Accès page produits"> En savoir plus</a>
         </div> 
        </div>`     
   };
+ 

@@ -108,7 +108,11 @@ body {
 .body-confirmation{
   border: 0.3rem solid rgba(0, 0, 0, 0.2)
 }
+
+/***Page panier ***/
+
+
 /**footer**/
 footer{
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
