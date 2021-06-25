@@ -1,3 +1,4 @@
+/*** Sélectionner La partie html où les produits seront affichés***/
 const affichageTeddies = document.getElementById("section-produits");
 
 /*** Appel Api avec Fetch ***/
@@ -9,7 +10,7 @@ const affichageTeddies = document.getElementById("section-produits");
         }        /*** La boucle "for...of" nous permet de récuperer les données dans l'ordre ***/
     })
     /*** Si Problème Api ***/
-    .catch(function (err) {
+    .catch(function (error) {
         alert("la liste des produits en vente est temporairement indisponible")
     });
      

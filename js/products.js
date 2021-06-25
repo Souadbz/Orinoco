@@ -9,9 +9,10 @@ console.log(urlSearchParams)
 let id = urlSearchParams.get("id");
 console.log(id); 
 
-  /*** création de la page ***/
+/*** Sélectionner La partie html où les produits seront affichés***/
  const affichageProduits = document.getElementById("container-products");
 
+ /*** Création de la page pour afficher les produits après l'appel Api ***/
  const affichageListeProduits = teddy =>{
     affichageProduits.innerHTML += 
     `<div class= "card">
@@ -40,59 +41,56 @@ console.log(id);
             <option value="5">5</option>
         </select>
    </form>
-     <a href="./basket.html"><button id="ajout" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">ajouter au panier</button></a>
+     <button id="ajout" id_product="${teddy._id}" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">ajouter au panier</button>
     </div> 
-    </div>`  
+    </div>` 
+    /*** Boucle pour récuperer les choix de couleurs ***/   
     for (let colors of teddy.colors){
-      document.getElementById('choix-colors').innerHTML+=
+      document.getElementById('choix-colors').innerHTML +=
       `<option value="colors">${colors}</option>`
-    } /*** Boucle pour récuperer les couleurs ***/  
+    } 
 
 }; 
- 
-/*** ***/
-/*** Appel Api pour récupèrer les données par le id ***/
+/*** Appel Api pour récupèrer les données par le id **/
 const getTeddy = async function() {
-     let response = await fetch('http://localhost:3000/api/teddies/' + id);
-     if (response.ok) {
-         let teddy = await response.json();
-         affichageListeProduits(teddy)}
-         else{
-          console.error("la liste des produits en vente est temporairement indisponible");
-          alert("la liste des produits en vente est temporairement indisponible")
-         }
-   }
-   /*** appel de la fonction ***/
-  getTeddy();
+  let response = await fetch('http://localhost:3000/api/teddies/' + id);  
+  if (response.ok) {
+      let teddy = await response.json();
+      affichageListeProduits(teddy)}
+      else{
+       console.error("la liste des produits en vente est temporairement indisponible");
+       alert("la liste des produits en vente est temporairement indisponible")
+      }
+} 
+/**appel de la fonction et affichage du produit **/
+getTeddy();
 
-  
-  /*** selection du bouton ***/
-  let ajout = document.querySelector("button");
-console.log(ajout)
+/************************** Localstorage et panier ******************************************************/
 
-  
-     /*** Le localStorage ***/
-/*** Déclarer la variariable contenant les clés et valeurs pour récupérer l'objet dans le localstorage***/
-let teddyLocalStorage = JSON.parse(localStorage.getItem("produitsLocalStorage")); /*** JSON.parse convertit les données au format JSON en Objet javascript ***/
-/** s'il y a des produits dans le localstorage ***/
-if (localStorage.getItem("produitsLocalStorage")){
-  teddyLocalStorage= [];
+/*** si le localStorage ne contient pas des produits ***/
+if (localStorage.getItem("cart") === null) {
+  var panier = [];
+} else {
+  /*** Si le localStorage existe déjà et contient des produits ***/
+  var panier = localStorage.getItem("cart");
+      panier = JSON.parse(panier);    /*** JSON.parse convertit les données au format JSON en Objet javascript ***/                    
 }
-/*** s'il n'ya pas de produits dans le localstorage ***/
-else {
-  let basketInit =[];
-  localStorage.setItem("produitsLocalStorage", JSON.stringify(basketInit));   /***JSON.stringify convertit les données au format objet javascript en JSON ***/
-  }
-
-/*** LE PANIER ***/
-/**ecouter le bouton et envoyer du(des) produit (s)au panier */
-ajout.addEventListener("click", function (event){
-  event.preventDefault();  
-  const ajoutBasket =  getTeddy();
-  teddyLocalStorage.push(ajoutBasket);
-  localStorage.setItem("produitsLocalStorage", JSON.stringify(teddyLocalStorage)); /*** transformation en format JSON  et l'envoyer dans la key produitsLocalStorage du localstorage ***/
-  alert(" le produit a été ajouté au panier")
-  location.reload();
-}); 
-
-
+ /*** Selection du bouton***/
+ let ajout = document.querySelector("button");
+console.log(ajout)
+/*** Ecouter le bouton et envoyer le(les) produit (s)au localstorage ***/
+ajout.addEventListener("click", function (){
+  let quantity = document.getElementById("quantity").value
+  let id_prod = document.getElementById("ajout").getAttribute("id_prod");
+  /*** On crée un objet correspondant au produit ***/
+  let teddy = {};
+  teddy.id_prod = id_prod,
+  teddy.quantity = quantity
+ 
+  /** On insère l'objet dans le localStorage ***/
+  panier.push(obj);
+  localStorage.setItem("cart", JSON.stringify(panier)) /***JSON.stringify convertit les données au format objet javascript en JSON ***/          
+  /*** On vérifie que le panier s'affiche comme on s'y attend ***/
+  console.log(panier);
+  console.log(localStorage.getItem("cart"));
+});
