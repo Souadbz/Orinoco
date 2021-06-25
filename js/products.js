@@ -81,10 +81,10 @@ console.log(ajout)
 /*** Ecouter le bouton et envoyer le(les) produit (s)au localstorage ***/
 ajout.addEventListener("click", function (){
   let quantity = document.getElementById("quantity").value
-  let id_prod = document.getElementById("ajout").getAttribute("id_prod");
+  let id_product = document.getElementById("ajout").getAttribute("id_product");
   /*** On crée un objet correspondant au produit ***/
   let teddy = {};
-  teddy.id_prod = id_prod,
+  teddy.id_product = id_product,
   teddy.quantity = quantity
  
   /** On insère l'objet dans le localStorage ***/
