@@ -110,7 +110,9 @@ body {
 }
 
 /***Page panier ***/
-
+.basket-empty{
+  color: red;
+}
 
 /**footer**/
 footer{
