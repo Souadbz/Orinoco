@@ -49,10 +49,11 @@ const affichageListeProduits = teddy =>{
     document.getElementById('choix-colors').innerHTML +=
     `<option value="colors">${colors}</option>`
   };
-/*** Selection du bouton***//*** Selection du bouton***/
+/*** Selection du bouton***/
 let ajout = document.getElementById("ajout");
 ajout.addEventListener('click', function(){
 ajoutProduct(teddy);
+
 /*** Ajout de la fenêtre pop-up */
 const confirmation =()=>{
   if(window.confirm(`${teddy.name} a bien été ajouté au panier! Vous pouvez consulter le panier OK ou revenir à l'acceuil ANNULER`)){

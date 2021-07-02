@@ -105,7 +105,7 @@ body {
   background-color: red;
 }
   /**Main page confirmation et remerciment**/
-.body-confirmation{
+#confirmation{
   border: 0.3rem solid rgba(0, 0, 0, 0.2)
 }
 
