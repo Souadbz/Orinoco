@@ -114,6 +114,14 @@ body {
   color: red;
 }
 
+#viderBasket, #btn-supprimer {
+  background-color: blue;
+  color: white;
+}
+#btn-supprimer, #viderBasket:hover{
+background-color: red;
+cursor: pointer;
+}
 /**footer**/
 footer{
   margin-top: 5rem;
