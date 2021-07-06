@@ -1,20 +1,18 @@
 # P5-Orinoco-Openclassrooms
----------
+
 ## Présentation du projet
 
-  Recrutée en tant que développeuse front-end par Orinoco, une entreprise de commerce en ligne.
-  L'objectif consiste en la création du front-end d'un site e-commerce(MVP).
-  Le back-end du projet est fourni (le dossier JWDP5)
+  Recrutée en tant que développeuse front-end par Orinoco, une entreprise de commerce en ligne.  L'objectif consiste en la création du front-end d'un site e-commerce(MVP).  Le back-end du projet est fourni (le dossier JWDP5).
 
  ## Prerequis
 
- Installez Node et npm  sur votre machine
+ Installez Node et npm  sur votre machine.
 
 ## Installation
 
 Clonez ce dépot, dans le dossier du back-end (JWDP5); lancez npm install dans votre console. Une fois tous les modules téléchargés, lancez node server dans la console. Par défaut le serveur fonctionne en localhost avec le port 3000. Si le serveur s'exécute sur un autre port pour une raison quelconque, cela est imprimé sur la console lorsque le serveur démarre, par ex. Écoute sur le port 3001.
 
-## CAHIER MVP
+## Cahier MVP
 
 * une page de vue sous forme de liste, montrant tous les articles disponibles
 à la vente ;

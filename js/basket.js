@@ -1,8 +1,8 @@
-/*const { allowedNodeEnvironmentFlags } = require("process");*/
+/*** Récupération du (des) produit(s) du localstorage   ***/
 
 let panier = JSON.parse(localStorage.getItem("cart")); /*** JSON.parse convertit les données au format JSON en Objet javascript ***/
 
-/*** Sélecionner la partie html **/
+/*** Sélecionner la partie html ***/
 const allProductsBasket = document.getElementById("container-products-basket");
 let productsBasket= document.getElementById("productsBasket");
 
@@ -15,7 +15,7 @@ if(panier == null || panier.length === 0){
     allProductsBasket.innerHTML = basketEmpty;
     
     }
-        /*** le panier contient des produits: creation de la partie panier ***/
+    /*** le panier contient des produits: creation de la partie panier html ***/
     else{
         let produitsPanier =[];
         console.log(panier)
@@ -39,7 +39,7 @@ if(panier == null || panier.length === 0){
      })   
  } 
  
-/*** Ajout d'un bouton pour supprimer le(s) produits***/
+/*** Ajout d'un bouton pour supprimer le(s) produit(s) ***/
 
 let buttonSupprimer = document.querySelectorAll('#btn-supprimer');
 
@@ -52,6 +52,7 @@ event.preventDefault();
 
 let idButtonSupprimer = panier[j].colors;
 console.log(idButtonSupprimer)
+
 /*** la methode filter pour supprimer les produits selectionnés lors du clic sur le bouton et garder les autres produits non selectionnés */
 
 panier = panier.filter(element=> element.colors !== idButtonSupprimer)
@@ -91,7 +92,8 @@ productsBasket.insertAdjacentHTML("beforeend", affichagePrixFinal)
 localStorage.setItem('prixTotal', JSON.stringify(totalCalcul));
 
  /***  Selection du bouton pour vider le panier***/
-let viderBasket = document.getElementById('viderBasket')
+
+ let viderBasket = document.getElementById('viderBasket')
 viderBasket.addEventListener('click',  deleteBasket);
 
 /***  Vider le panier***/
@@ -105,7 +107,6 @@ function deleteBasket() {
 };
 
 /************************ La gestion du formulaire ******************/
-
 
 /*** la validation et controle du formulaire ***/
 const monTextAlert = (values) =>{

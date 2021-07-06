@@ -1,8 +1,11 @@
 /*** récupération de l'id de la commande ***/
+
 const commande = localStorage.getItem("commande")
+
 /*** recupération du prix total de la commande ***/
-console.log()
+
 let prixTotal = JSON.parse(localStorage.getItem("prixTotal"));
+
 /*** recupération des informations du formulaire ***/
 
 let contact = JSON.parse(localStorage.getItem("contact"));
