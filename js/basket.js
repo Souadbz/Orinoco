@@ -182,23 +182,15 @@ if(regExPrenomNomVille(laVille.value)){
         return false;
  }
  })
- /*** Selectionner le id du produit du panier pour l'envoyer au serveur **/
+ /*** Selectionner le id du (des) produit(s) ***/
  
  let products = [];
  for(teddy of panier){
 const productsId = teddy.id;
-//const productsPrice = teddy.price;
-//const productsName = teddy.name;
-//const productsQantity = teddy.quantity;
-//const prodoductsImageUrl = ;
-//products.push(productsPrice);
-//products.push(productsName);
-//products.push(productsQantity);
 products.push(productsId)
-
  }
 console.log(products)
-/***JSON.stringify convertit les données au format objet javascript en JSON (envoyer la key "cart" au localstorage) ***/          
+/***JSON.stringify convertit les données au format objet javascript en JSON (créer la key "products" pour le localstorage) ***/          
 localStorage.setItem("products", JSON.stringify(products)) 
  console.log(products)
 /*** Sélection du bouton "valider ma commande" ***/
@@ -227,7 +219,7 @@ let contact = {
             alert("Veuillez bien remplir le formulaire");
         
         }
-        /*** Récupérer les valeurs du formulaire et le(s) produit(s) du panier***/
+/*** Récupérer les valeurs du formulaire et le(s) produit(s) du panier***/
         let commandeClient = JSON.stringify({
             products,
             contact,
@@ -251,7 +243,7 @@ let sendOrder = fetch('http://localhost:3000/api/teddies/order', {
         console.log(contenu);
 
         if(response.ok){
-             /*** récuperer l'id de la responseet le mettre dans le localstorage ***/
+             /*** récuperer l'id de la response et le mettre dans le localstorage ***/
              console.log(contenu.orderId)
              localStorage.setItem("commande", contenu.orderId);
              window.location.href= "confirmation.html"
