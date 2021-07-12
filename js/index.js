@@ -37,7 +37,6 @@ function getTeddiesProducts() {
     .catch(error => {
       console.log('les produits ne sont pas disponible')
     })
-
 }
 /*** Appel de la fonction et affichage des produits  ***/
 getTeddiesProducts()
