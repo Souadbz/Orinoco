@@ -105,10 +105,13 @@ body {
 .btn-primary:hover{
   background-color: red;
 }
-  /*** Main page confirmation et remerciment ***/
-#confirmation{
-  border: 0.3rem solid rgba(0, 0, 0, 0.2)
+/*** page prodtuit***/
+@media screen and (min-width: 413px){
+  #btn-retour{
+    float: right;
+  }
 }
+
 
 /***Page panier ***/
 .basket-empty{
@@ -131,18 +134,32 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
 }
+@media (max-width: 534px){
+  .table thead {
+  display: none;
+  }
+  .table tr{
+  display: block;
+  margin-bottom: 40px;
+  }
+  .table td {
+  display: block;
+  text-align: right;
+  }
+  .table td:before {
+  content: attr(data-label);
+  float: left;
+  font-weight: bold;
+  }
+  }
+  /*** Main page confirmation et remerciment ***/
+  #confirmation{
+    border: 0.3rem solid rgba(0, 0, 0, 0.2)
+  }
 /*** footer ***/
 
 footer{
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
-/*** footer page confirmation ***/
-
-#footer-confirmation {
-    position:fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;  
-}
 
