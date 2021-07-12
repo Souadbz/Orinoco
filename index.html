@@ -24,7 +24,7 @@
   <!--Police Roboto-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="style.min.css" />
 </head>
 
 <body>
@@ -35,7 +35,8 @@
           <a href="#" class="navbar-brand">
             <img src="./images/logo.png" alt="le logo de Orinico" title="logo Orinoco" width="100" height="70" />
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-label='right align'>
             <span class="navbar-toggler-icon"></span>
           </button>
           <ul id="navbarContent" class="justify-content-end navbar-nav navbar-collapse collapse collapse ">
@@ -52,7 +53,6 @@
         </nav>
       </div>
     </div>
-    </div>
   </header>
   <!--CAROUSEL-->
   <section class="container">
@@ -67,19 +67,19 @@
         <div class="carousel-item active">
           <img class="d-block w-100" src="./images/choix.jpg" alt="Large choix de peluche" />
           <div class="carousel-caption d-none d-md-block">
-            <h5 class="title-carousel">Large choix</h5>
+            <h2 class="title-carousel">Large choix</h2>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="./images/qualité.jpg" alt="peluche haut de gamme" />
           <div class="carousel-caption d-none d-md-block">
-            <h5 class="title-carousel">Originalité, Qualité et Douceur</h5>
+            <h2 class="title-carousel">Originalité, Qualité et Douceur</h2>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="./images/personnalisable.jpg" alt="Peluche personnalisable" />
           <div class="carousel-caption d-none d-md-block">
-            <h5 class="title-carousel">Créez votre peluche personnalisée</h5>
+            <h2 class="title-carousel">Créez votre peluche personnalisée</h2>
           </div>
         </div>
       </div>
@@ -95,14 +95,14 @@
   </section>
   <section class="container" id="produits">
     <h2 class="container-title">Achat d'ours en peluche faits à la main</h2>
-    <main id="section-produits">
+    <div id="section-produits">
 
       <!-- à completer avec le js-->
-    </main>
+    </div>
   </section>
   <footer class="text-center text-white back" id="footer-index">
     <div class="container pt-4">
-      <section class="mb-4">
+      <div class="mb-4">
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com" aria-label="facebook"
           target="_blank" rel="noopener" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-facebook-f"></i></a>
@@ -110,7 +110,7 @@
           rel="noopener" aria-label="twitter" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-twitter"></i></a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com" target="_blank"
-          rel="noopener" a aria-label="instagram" role="button" data-mdb-ripple-color="dark"><i
+          rel="noopener" aria-label="instagram" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-instagram"></i></a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://fr.linkedin.com/" target="_blank"
           rel="noopener" aria-label="linkedin" role="button" data-mdb-ripple-color="dark"><i
@@ -118,7 +118,7 @@
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/" target="_blank"
           rel="noopener" aria-label="github" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-github"></i></a>
-      </section>
+      </div>
     </div>
     <div class="text-center text-dark p-3 back-f">
       © 2021 Copyright:
@@ -134,7 +134,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
-  <script type="text/javascript" src="./js/index.js" defer></script>
+  <script src="./js/index.min.js" defer></script>
   <script src="https://kit.fontawesome.com/11c9baffaa.js" crossorigin="anonymous"></script> <!-- fontawesome-->
 </body>
 

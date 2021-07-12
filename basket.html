@@ -24,7 +24,7 @@
   <!--Police Roboto-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="style.min-css" />
 </head>
 
 <body>
@@ -36,7 +36,8 @@
           <a href="#" class="navbar-brand">
             <img src="./images/logo.png" alt="le logo de Orinico" title="logo Orinoco" width="100" height="70" />
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-label='right align'>
             <span class="navbar-toggler-icon"></span>
           </button>
           <ul id="navbarContent" class="justify-content-end navbar-nav navbar-collapse collapse collapse ">
@@ -50,12 +51,11 @@
         </nav>
       </div>
     </div>
-    </div>
   </header>
   <section class="container">
     <h1> Récapitulatif de votre panier</h1>
     <p>Retrait gratuit en point relais et <strong>livraison offerte</strong> sans minimum d'achat</p>
-    <main id="container-products-basket">
+    <div id="container-products-basket">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -72,7 +72,7 @@
         </tbody>
       </table>
       <button id="viderBasket">Vider le Panier </button>
-    </main>
+    </div>
   </section>
   <section class="container">
     <h2>Merci de remplir le formulaire</h2>
@@ -102,10 +102,9 @@
       </div>
     </form>
   </section>
-  </div>
   <footer class="text-center text-white back" id="footer-basket">
     <div class="container pt-4">
-      <section class="mb-4">
+      <div class="mb-4">
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com" aria-label="facebook"
           target="_blank" rel="noopener" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-facebook-f"></i></a>
@@ -113,7 +112,7 @@
           rel="noopener" aria-label="twitter" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-twitter"></i></a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com" target="_blank"
-          rel="noopener" a aria-label="instagram" role="button" data-mdb-ripple-color="dark"><i
+          rel="noopener" aria-label="instagram" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-instagram"></i></a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://fr.linkedin.com/" target="_blank"
           rel="noopener" aria-label="linkedin" role="button" data-mdb-ripple-color="dark"><i
@@ -121,7 +120,7 @@
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/" target="_blank"
           rel="noopener" aria-label="github" role="button" data-mdb-ripple-color="dark"><i
             class="fab fa-github"></i></a>
-      </section>
+      </div>
     </div>
     <!-- Copyright -->
     <div class="text-center text-dark p-3 back-f">
@@ -138,7 +137,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
-  <script type="text/javascript" src="./js/basket.js" defer></script>
+  <script src="./js/basket.min.js" defer></script>
   <script src="https://kit.fontawesome.com/11c9baffaa.js" crossorigin="anonymous"></script> <!-- Fontawesome -->
 </body>
 
