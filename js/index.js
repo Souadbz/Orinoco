@@ -21,22 +21,19 @@ const affichageListeTeddies = teddy => {
         </div> 
        </div>`
 };
-/************************* Appel Api avec Fetch ******************/
-/*** appel API pour récupérer tout les teddies ***/
-function getTeddiesProducts() {
+/************************* Appel Api avec Fetch  pour récupérer les teddies  ******************/
+async function getTeddiesProducts() {
   fetch("http://localhost:3000/api/teddies")
-    .then(async response => {
-      /*** récuperer les données au format JSON ***/
-      const productsList = await response.json();
-      productsList.forEach(teddy => {
-        affichageListeTeddies(teddy)
-
-      }) /*** la fonction forEach permet de récuperer les données du array dans l'ordre ***/
+    .then(response => await response.json()) /*** récuperer les données au format JSON ***/
+    .then(function (productslist) {
+      for (let teddy of productslist) {
+        affichageListeTeddies(teddy);
+      } /*** La boucle "for...of" nous permet de récuperer les données dans l'ordre ***/
     })
     /*** Si Problème Api ***/
-    .catch(error => {
-      console.log('les produits ne sont pas disponible')
-    })
+    .catch(function (error) {
+      console.log("la liste des produits en vente est temporairement indisponible")
+    });
 }
 /*** Appel de la fonction et affichage des produits  ***/
 getTeddiesProducts()
