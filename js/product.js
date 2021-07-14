@@ -51,7 +51,7 @@ const affichageListeProduits = teddy => {
             `<option value="${colors}">${colors}</option>`
     };
     /************************** Localstorage et panier ******************************************************/
-    /*** si le localStorage contient ou pas des produits ***/
+    /*** si le localStorage contient ou pas des produits/ on déclare notre panier***/
     let panier = JSON.parse(localStorage.getItem("cart")) || []; /*** JSON.parse convertit les données au format JSON en Objet javascript ***/
     function addPanier() {
         /*** Selection du bouton***/
@@ -77,8 +77,9 @@ const affichageListeProduits = teddy => {
             teddyObjet.price = price;
             teddyObjet.colors = colors
 
-            /*** Boucle  ***/
+            /*** déclaration de la variable pour les produits du panier  ***/
             let produitExist = false;
+            /*** Boucle for va parcourir le panier  ***/
             for (let i = 0; i < panier.length; i++) {
                 let produit = panier[i];
                 /*** s'il y a un produit dans le panier ***/
@@ -90,9 +91,9 @@ const affichageListeProduits = teddy => {
             if (false !== produitExist) {
                 panier[produitExist].quantity = parseInt(panier[produitExist].quantity) + teddyObjet.quantity;
             } else {
+                /** On insère l'objet dans le localStorage ***/
                 panier.push(teddyObjet);
             }
-            /** On insère l'objet dans le localStorage ***/
 
             /***JSON.stringify convertit les données au format objet javascript en JSON (envoyer la key "cart" au localstorage) ***/
             localStorage.setItem("cart", JSON.stringify(panier))
