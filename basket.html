@@ -28,80 +28,82 @@
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="container-fluid back">
-    <div class="row">
-      <div class="col">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a href="#" class="navbar-brand">
-            <img src="./images/logo.png" alt="le logo de Orinico" title="logo Orinoco" width="100" height="70" />
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-            aria-label='right align'>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <ul id="navbarContent" class="justify-content-end navbar-nav navbar-collapse collapse collapse ">
-            <li class="nav-item active">
-              <a href="index.html" class="nav-link">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a href="basket.html" class="nav-link"><i class="fas fa-shopping-cart fas-panier"></i>Panier</a>
-            </li>
-          </ul>
-        </nav>
+  <div class="content">
+    <!-- HEADER -->
+    <header class="container-fluid back">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="#" class="navbar-brand">
+              <img src="./images/logo.png" alt="le logo de Orinico" title="logo Orinoco" width="100" height="70" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+              aria-label='right align'>
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul id="navbarContent" class="justify-content-end navbar-nav navbar-collapse collapse collapse ">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a href="basket.html" class="nav-link"><i class="fas fa-shopping-cart fas-panier"></i>Panier</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-  </header>
-  <section class="container">
-    <h1> Récapitulatif de votre panier</h1>
-    <p>Retrait gratuit en point relais et <strong>livraison offerte</strong> sans minimum d'achat</p>
-    <div id="container-products-basket">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Produit</th>
-            <th>Quantité</th>
-            <th>Prix</th>
-            <th>couleurs</th>
-            <th>Annuler</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody id="productsBasket">
-          <!-- à completer par le js-->
-        </tbody>
-      </table>
-      <button id="viderBasket">Vider le Panier </button>
-    </div>
-  </section>
-  <section class="container">
-    <h2>Merci de remplir le formulaire</h2>
-    <form class="form-row">
-      <div class="form-group col-md-6">
-        <label for="firstName">Prénom</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Xavier" required>
+    </header>
+    <section class="container">
+      <h1> Récapitulatif de votre panier</h1>
+      <p>Retrait gratuit en point relais et <strong>livraison offerte</strong> sans minimum d'achat</p>
+      <div id="container-products-basket">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Produit</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+              <th>couleurs</th>
+              <th>Annuler</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="productsBasket">
+            <!-- à completer par le js-->
+          </tbody>
+        </table>
+        <button id="viderBasket">Vider le Panier </button>
       </div>
-      <div class="form-group col-md-6">
-        <label for="lastName">Nom</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Dupon" required>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Dupon.Xavier@gmail.com" required>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputAddress">Adresse</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="10 avenue de paris" required>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputCity">Ville</label>
-        <input type="text" class="form-control" id="inputCity" placeholder="Paris" required>
-      </div>
-      <div class="form-group col-12 col-md-12">
-        <button type="submit" id="validerMaCommande" class="btn btn-primary">valider ma commande</button>
-      </div>
-    </form>
-  </section>
+    </section>
+    <section class="container">
+      <h2>Merci de remplir le formulaire</h2>
+      <form class="form-row">
+        <div class="form-group col-md-6">
+          <label for="firstName">Prénom</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Xavier" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastName">Nom</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Dupon" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Dupon.Xavier@gmail.com" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Adresse</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="10 avenue de paris" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputCity">Ville</label>
+          <input type="text" class="form-control" id="inputCity" placeholder="Paris" required>
+        </div>
+        <div class="form-group col-12 col-md-12">
+          <button type="submit" id="validerMaCommande" class="btn btn-primary">valider ma commande</button>
+        </div>
+      </form>
+    </section>
+  </div>
   <footer class="text-center text-white back" id="footer-basket">
     <div class="container pt-4">
       <div class="mb-4">

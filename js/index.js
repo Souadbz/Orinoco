@@ -22,9 +22,9 @@ const affichageListeTeddies = teddy => {
        </div>`
 };
 /************************* Appel Api avec Fetch  pour récupérer les teddies  ******************/
-async function getTeddiesProducts() {
+function getTeddiesProducts() {
   fetch("http://localhost:3000/api/teddies")
-    .then(response => await response.json()) /*** récuperer les données au format JSON ***/
+    .then(response => response.json()) /*** récuperer les données au format JSON ***/
     .then(function (productslist) {
       for (let teddy of productslist) {
         affichageListeTeddies(teddy);

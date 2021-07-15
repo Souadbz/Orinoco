@@ -26,6 +26,9 @@ body {
   h2{
     font-size: 1.4rem;
   }
+  h3{
+    font-size: 1.3rem;
+  }
   /***HEADER***/
   header{
     margin-bottom: 1rem;
@@ -111,8 +114,14 @@ body {
     float: right;
   }
 }
-
-
+.content{
+  min-height: 100%;
+  margin-bottom: 0;
+}
+.content:after{
+  content:"";
+  display: block;
+}
 /***Page panier ***/
 .basket-empty{
   color: red;
@@ -156,10 +165,31 @@ body {
   #confirmation{
     border: 0.3rem solid rgba(0, 0, 0, 0.2)
   }
-/*** footer ***/
+  .fidelite{
+    color: blue;
 
-footer{
-  margin-top: 7rem;
+  }
+/*** footer ***/
+footer, .content:after{
+  height: 10rem;
+  
 }
+#footer-index, .content:after{
+  margin-top: 25rem;
+}
+
+#footer-product, .content:after{
+  margin-top: 5rem;
+}
+#footer-basket, .content:after{
+  height: 10rem;
+  margin-top: 9rem;
+}
+#footer-confirmation, .content:after{
+  margin-top: 18rem;
+}
+
+
+
 
 

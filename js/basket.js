@@ -43,8 +43,9 @@ function btnSupprimer() {
     /*** Ajout d'un bouton pour supprimer le(s) produit(s) ***/
     let buttonSupprimer = document.querySelectorAll('#btn-supprimer');
 
-    /*** boucle for pour récupérer les produits et écouter le bouton au click ***/
+    /*** boucle for pour récupérer le produit sélectionné ***/
     for (let j = 0; j < buttonSupprimer.length; j++) {
+        /*** écouter le bouton au click ***/
         buttonSupprimer[j].addEventListener("click", (event) => {
             event.preventDefault();
 
